@@ -28,12 +28,14 @@ const News = ( { simplified }) => {
                 !simplified && (
                     <Col span={24}>
                         <Select
-                            showSearch
+                            //showSearch
                             className="select-news"
                             placeholder="Select a currency"
                             optionFilterProp="children"
                             onChange={ (value) => setnewsCategory(value)}
-                            filterOption={ (input, option) => option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
+                            // filterOption={(input, option) =>
+                            //     option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                            // }
                         >
                             <Option value="Cryptocurrency" > Cryptocurrency </Option>
                             { data?.data?.coins.map( (coin, i) => <Option value={coin.name} key = {i}> {coin.name} </Option>)}

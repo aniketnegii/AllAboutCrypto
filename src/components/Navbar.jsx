@@ -48,7 +48,6 @@ const Navbar = () => {
             {
                 activeMenu && (
                     <Menu theme="dark" >
-                        <div onClick={() => setActiveMenu(!activeMenu)} >
                             <Menu.Item icon={<HomeOutlined/>}>
                                 <Link to="/">Home</Link>
                             </Menu.Item>
@@ -60,8 +59,7 @@ const Navbar = () => {
                             </Menu.Item>
                             <Menu.Item icon={<BulbOutlined/>}>
                                 <Link to="/news"> News </Link>
-                            </Menu.Item>
-                        </div>             
+                            </Menu.Item>           
                     </Menu>       
                 )
             }

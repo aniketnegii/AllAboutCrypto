@@ -50,7 +50,7 @@ const CryptoDetails = () => {
                     {cryptoDetails.name} ({cryptoDetails.slug}) Price
                 </Title>
                 <p>
-                    {cryptoDetails.name} live price, View value statistics, market cap and supply.
+                    {cryptoDetails.name} live price, view value statistics, market cap and supply.
                 </p>
             </Col>
             <Select
