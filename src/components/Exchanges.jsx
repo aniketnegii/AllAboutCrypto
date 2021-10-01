@@ -2,6 +2,7 @@ import React from 'react';
 import millify from 'millify';
 import { Collapse, Row, Col, Typography, Avatar } from 'antd';
 import HTMLReactParser from 'html-react-parser';
+import 'antd/dist/antd.css';
 
 import { useGetExchangesQuery } from '../services/cryptoAPI';
 import Loader from './Loader';
@@ -14,7 +15,6 @@ const Exchanges = () => {
   const exchangesList = data?.data?.exchanges;
 
   if (isFetching) return <Loader />;
-
   return (
     <>
       <Row>
@@ -24,13 +24,14 @@ const Exchanges = () => {
         <Col span={6}>Change</Col>
       </Row>
       <Row>
-        {exchangesList.map((exchange) => (
+        {exchangesList.map((exchange, i) => (
           <Col span={24} key={exchange.id} >
-            <Collapse>
+            <Collapse accordion>
               <Panel
+                key={i.toString()}
                 showArrow={false}
                 header={(
-                  <Row key={exchange.id}>
+                  <Row>
                     <Col span={6}>
                       <Text><strong>{exchange.rank}.</strong></Text>
                       <Avatar className="exchange-image" src={exchange.iconUrl} />
@@ -42,7 +43,7 @@ const Exchanges = () => {
                   </Row>
                   )}
               >
-                {HTMLReactParser(exchange.description || '')}
+                <p>{HTMLReactParser(exchange.description || '')}</p>
               </Panel>
             </Collapse>
           </Col>

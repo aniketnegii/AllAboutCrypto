@@ -110,15 +110,15 @@ const CryptoDetails = () => {
                         ))
                     }
                 </Col>
-
-                <Col className="coin-desc-link">
+            </Col>
+            <Col className="coin-desc-link">
                     <Row className="coin-desc">
                         <Title level={3} className="coin-details-heading">
                             What is {cryptoDetails.name}
-                            {HTMLReactParser(cryptoDetails.description)}
                         </Title>
+                        {HTMLReactParser(cryptoDetails.description)}
                     </Row>
-                    <Col className="coin-links">
+                    <Col className="coin-links"  >
                         <Title level={3} className="coin-details-heading">
                             {cryptoDetails.name} Links
                         </Title>
@@ -134,8 +134,6 @@ const CryptoDetails = () => {
                         ))}
                     </Col>
                 </Col>
-
-            </Col>
         </Col>
     )
 }
