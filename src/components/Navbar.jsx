@@ -40,29 +40,38 @@ const Navbar = () => {
         <Typography.Title level={2} className="logo">
           <Link to="/"> CryptoWorld </Link>
         </Typography.Title>
-        <Button
+        {/* <Button
           className="menu-control-container"
           onClick={() => setActiveMenu(!activeMenu)}
         >
           <MenuOutlined />
-        </Button>
+        </Button> */}
       </div>
-      {activeMenu && (
-        <Menu theme="dark">
-          <Menu.Item key={Utils.makeid()} icon={<HomeOutlined />}>
-            <Link to="/">Home</Link>
-          </Menu.Item>
-          <Menu.Item key={Utils.makeid()} icon={<FundOutlined />}>
-            <Link to="/cryptocurrencies"> CryptoCurrencies </Link>
-          </Menu.Item>
-          {/* <Menu.Item icon={<MoneyCollectOutlined/>}>
+      {/* {activeMenu && ( */}
+      <Menu
+        theme="dark"
+        mode="horizontal"
+        style={{
+          flexGrow: "2",
+          display: "flex",
+          justifyContent: "flex-end",
+          alignItems: "center",
+        }}
+      >
+        <Menu.Item key={Utils.makeid()} icon={<HomeOutlined />}>
+          <Link to="/">Home</Link>
+        </Menu.Item>
+        <Menu.Item key={Utils.makeid()} icon={<FundOutlined />}>
+          <Link to="/cryptocurrencies"> CryptoCurrencies </Link>
+        </Menu.Item>
+        {/* <Menu.Item icon={<MoneyCollectOutlined/>}>
                                 <Link to="/exchanges">Exchanges</Link>
                             </Menu.Item> */}
-          <Menu.Item key={Utils.makeid()} icon={<BulbOutlined />}>
-            <Link to="/news"> News </Link>
-          </Menu.Item>
-        </Menu>
-      )}
+        <Menu.Item key={Utils.makeid()} icon={<BulbOutlined />}>
+          <Link to="/news"> News </Link>
+        </Menu.Item>
+      </Menu>
+      {/* )} */}
     </div>
   );
 };
