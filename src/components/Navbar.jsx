@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Menu, Typography, Avatar } from "antd";
 import { Link } from "react-router-dom";
 import {
@@ -14,24 +14,24 @@ import { Utils } from "../utils/utils";
 
 const Navbar = () => {
   // const [activeMenu, setActiveMenu] = useState(true);
-  const [screenSize, setScreenSize] = useState(null);
+  // const [screenSize, setScreenSize] = useState(null);
 
-  useEffect(() => {
-    const handleResize = () => setScreenSize(window.innerWidth);
+  // useEffect(() => {
+  //   const handleResize = () => setScreenSize(window.innerWidth);
 
-    window.addEventListener("resize", handleResize);
-    handleResize();
+  //   window.addEventListener("resize", handleResize);
+  //   handleResize();
 
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  //   return () => window.removeEventListener("resize", handleResize);
+  // }, []);
 
-  useEffect(() => {
-    if (screenSize < 768) {
-      setActiveMenu(false);
-    } else {
-      setActiveMenu(true);
-    }
-  }, [screenSize]);
+  // useEffect(() => {
+  //   if (screenSize < 768) {
+  //     setActiveMenu(false);
+  //   } else {
+  //     setActiveMenu(true);
+  //   }
+  // }, [screenSize]);
 
   return (
     <div className="nav-container">
